@@ -11,6 +11,7 @@
     "sideEffects": false,
     "devDependencies": {
         "@happy-dom/global-registrator": "^16.0.0",
+        "@tanstack/intent": "^0.0.41",
         "esbuild": "^0.24.0"
     },
     "scripts": {
@@ -31,10 +32,18 @@
         "larajax",
         "laravel ajax",
         "ajax",
-        "framework"
+        "framework",
+        "tanstack-intent"
     ],
     "bugs": {
         "url": "https://github.com/larajax/larajax/issues"
     },
-    "homepage": "https://github.com/larajax/larajax#readme"
+    "homepage": "https://github.com/larajax/larajax#readme",
+    "files": [
+        "src",
+        "dist",
+        "types",
+        "skills",
+        "!skills/_artifacts"
+    ]
 }

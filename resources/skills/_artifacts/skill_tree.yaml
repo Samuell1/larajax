@@ -1,0 +1,79 @@
+# skills/_artifacts/skill_tree.yaml
+library:
+  name: 'larajax'
+  version: '2.2.2'
+  repository: 'https://github.com/larajax/larajax'
+  description: 'A small AJAX framework for Laravel, built around onXxx controller handlers and data-request HTML attributes.'
+generated_from:
+  domain_map: 'skills/_artifacts/domain_map.yaml'
+  skill_spec: 'skills/_artifacts/skill_spec.md'
+generated_at: '2026-05-11'
+
+skills:
+  - name: 'larajax/core'
+    slug: 'core'
+    type: 'core'
+    domain: 'core'
+    path: 'skills/larajax/core/SKILL.md'
+    description: >
+      Install Larajax, define AJAX handlers as onXxx methods on a
+      LarajaxController, and let larajax route AJAX requests automatically via
+      the X-AJAX-HANDLER header.
+    sources:
+      - 'larajax/larajax:src/LarajaxController.php'
+      - 'larajax/larajax:src/Traits/AjaxController.php'
+      - 'larajax/larajax:src/Classes/AjaxRequest.php'
+      - 'larajax/larajax:src/init.php'
+      - 'larajax/larajax:resources/src/index.js'
+      - 'larajax/larajax:resources/src/request/options.js'
+
+  - name: 'larajax/triggers'
+    slug: 'triggers'
+    type: 'core'
+    domain: 'triggers'
+    path: 'skills/larajax/triggers/SKILL.md'
+    description: >
+      Wire HTML elements to AJAX handlers using the data-request family of
+      attributes — handler name, data, partial updates, validation, files,
+      bulk JSON, triggers (debounce / poll / intersect), confirm, redirect.
+    requires:
+      - 'larajax/core'
+    sources:
+      - 'larajax/larajax:resources/src/core/request-builder.js'
+      - 'larajax/larajax:resources/src/core/trigger.js'
+      - 'larajax/larajax:resources/src/request/options.js'
+      - 'larajax/larajax:resources/src/request/data.js'
+
+  - name: 'larajax/responses'
+    slug: 'responses'
+    type: 'core'
+    domain: 'responses'
+    path: 'skills/larajax/responses/SKILL.md'
+    description: >
+      Build AJAX responses with ajax() — DOM patches, partials, redirects,
+      reload, flash messages, browserEvent dispatch, invalidFields,
+      js/css/img/jsInline asset loading, error/fatal status, exception handling.
+    requires:
+      - 'larajax/core'
+    sources:
+      - 'larajax/larajax:src/Classes/AjaxResponse.php'
+      - 'larajax/larajax:src/Classes/AjaxResponse/HasAccessors.php'
+      - 'larajax/larajax:src/Classes/AjaxResponse/HasOverrides.php'
+      - 'larajax/larajax:src/init.php'
+
+  - name: 'larajax/components'
+    slug: 'components'
+    type: 'core'
+    domain: 'components'
+    path: 'skills/larajax/components/SKILL.md'
+    description: >
+      Define reusable Larajax view components — classes that own onXxx
+      handlers, register on controllers via $components, and dispatch via
+      alias::onHandler.
+    requires:
+      - 'larajax/core'
+    sources:
+      - 'larajax/larajax:src/Traits/ViewComponent.php'
+      - 'larajax/larajax:src/Contracts/ViewComponentInterface.php'
+      - 'larajax/larajax:src/Classes/ComponentContainer.php'
+      - 'larajax/larajax:src/Classes/AjaxRequest.php'
